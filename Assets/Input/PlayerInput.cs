@@ -23,6 +23,8 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector]
     public bool _powerUpEnabled;
 
+    private int P1, P2;
+
     private void Awake()
     {
         if (_playerInputActions == null)
@@ -33,6 +35,13 @@ public class PlayerInput : MonoBehaviour
     private void OnEnable()
     {
         _playerInputActions.Enable();
+
+        if (Gamepad.all[0] != null)
+            P1 = Gamepad.all[0].deviceId;
+
+        if (Gamepad.all[1] != null)
+            P2 = Gamepad.all[1].deviceId;
+
         _playerInputActions.Player1Actions.Pulse.performed += EnablePulse1;
         _playerInputActions.Player1Actions.Pulse.canceled += DisablePulse1;
 
@@ -68,32 +77,38 @@ public class PlayerInput : MonoBehaviour
 
     private void EnablePulse1(InputAction.CallbackContext context)
     {
-        _player1Pulse = true;
+        if (context.control.device.deviceId == P1)
+            _player1Pulse = true;
     }
 
     private void DisablePulse1(InputAction.CallbackContext context)
     {
-        _player1Pulse = false;
+        if (context.control.device.deviceId == P1)
+            _player1Pulse = false;
     }
 
     private void EnablePulse2(InputAction.CallbackContext context)
     {
-        _player2Pulse = true;
+        if (context.control.device.deviceId == P2)
+            _player2Pulse = true;
     }
 
     private void DisablePulse2(InputAction.CallbackContext context)
     {
-        _player2Pulse = false;
+        if (context.control.device.deviceId == P2)
+            _player2Pulse = false;
     }
 
     private void Player1_Move_Performed(InputAction.CallbackContext context)
     {
-        _movementInputP1 = context.ReadValue<Vector2>();
+        if(context.control.device.deviceId == P1)
+            _movementInputP1 = context.ReadValue<Vector2>();
     }
 
     private void Player1_Move_Canceled(InputAction.CallbackContext context)
     {
-        _movementInputP1 = Vector2.zero;
+        if (context.control.device.deviceId == P1)
+            _movementInputP1 = Vector2.zero;
     }
 
     private void Enable_PowerUp(InputAction.CallbackContext context)
@@ -104,11 +119,13 @@ public class PlayerInput : MonoBehaviour
 
     private void Player2_Move_Performed(InputAction.CallbackContext context)
     {
-        _movementInputP2 = context.ReadValue<Vector2>();
+        if(context.control.device.deviceId == P2)
+            _movementInputP2 = context.ReadValue<Vector2>();
     }
 
     private void Player2_Move_Canceled(InputAction.CallbackContext context)
     {
-        _movementInputP2 = Vector2.zero;
+        if (context.control.device.deviceId == P2)
+            _movementInputP2 = Vector2.zero;
     }
 }
