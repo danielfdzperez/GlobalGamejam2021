@@ -27,6 +27,8 @@ public class PlayerInteractionWithObjects : MonoBehaviour
 
     private bool _canInteract = true;
 
+    private PlayerInput _playerInput;
+
     private void Start()
     {
         if (!_interactionSpehereObject)
@@ -45,6 +47,9 @@ public class PlayerInteractionWithObjects : MonoBehaviour
 
         _interactionSpehereObject.GetComponent<Collider>().isTrigger = true;
         _interacionSphere = _interactionSpehereObject.AddComponent<PlayerSphereInteracion>();
+
+        _playerInput = FindObjectOfType<PlayerInput>();
+
     }
 
     //Interactúa directamente con los objetos que tiene dentro del radio de acción
@@ -60,7 +65,7 @@ public class PlayerInteractionWithObjects : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && _canInteract)
+        if (_playerInput._playerPulse && _canInteract)
         {
             _currentInteractionCounter += Time.deltaTime;
 
@@ -72,7 +77,7 @@ public class PlayerInteractionWithObjects : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (!_playerInput._playerPulse)
         {
             _currentInteractionCounter = 0;
             _canInteract = true;
