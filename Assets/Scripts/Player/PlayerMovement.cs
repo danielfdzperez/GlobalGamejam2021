@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerInput _playerInput;
 
+    private PlayerInformation _playerInformation;
+
     private void Start()
     {
         // get the transform of the main camera
@@ -30,15 +32,29 @@ public class PlayerMovement : MonoBehaviour
         m_Character = GetComponent<ThirdPersonCharacter>();
 
         _playerInput = FindObjectOfType<PlayerInput>();
+
+        _playerInformation = GetComponent<PlayerInformation>();
     }
 
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+
+        float h = 0;
+        float v = 0;
+
         // read inputs
-        float h = _playerInput._movementInput.x;
-        float v = _playerInput._movementInput.y; // CrossPlatformInputManager.GetAxis("Vertical");
-        //bool crouch = Input.GetKey(KeyCode.C);
+        if (_playerInformation._myPlayerNumber == myPlayerNumber.Player1)
+        {
+            h = _playerInput._movementInputP1.x;
+            v = _playerInput._movementInputP1.y;
+        }
+
+        else
+        {
+            h = _playerInput._movementInputP2.x;
+            v = _playerInput._movementInputP2.y;
+        }
 
         // calculate move direction to pass to character
         if (m_Cam != null)

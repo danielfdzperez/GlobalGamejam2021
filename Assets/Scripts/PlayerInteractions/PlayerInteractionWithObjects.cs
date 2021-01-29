@@ -29,6 +29,10 @@ public class PlayerInteractionWithObjects : MonoBehaviour
 
     private PlayerInput _playerInput;
 
+    private bool _pulse = false;
+
+    private PlayerInformation _playerInformation;
+
     private void Start()
     {
         if (!_interactionSpehereObject)
@@ -50,6 +54,8 @@ public class PlayerInteractionWithObjects : MonoBehaviour
 
         _playerInput = FindObjectOfType<PlayerInput>();
 
+        _playerInformation = GetComponent<PlayerInformation>();
+
     }
 
     //Interactúa directamente con los objetos que tiene dentro del radio de acción
@@ -65,7 +71,18 @@ public class PlayerInteractionWithObjects : MonoBehaviour
 
     public void Update()
     {
-        if (_playerInput._playerPulse && _canInteract)
+        _pulse = false;
+
+        if (_playerInformation._myPlayerNumber == myPlayerNumber.Player1)
+        {
+            _pulse = _playerInput._player1Pulse;
+        }
+        else
+        {
+            _pulse = _playerInput._player2Pulse;
+        }
+
+        if (_pulse && _canInteract)
         {
             _currentInteractionCounter += Time.deltaTime;
 
@@ -77,7 +94,7 @@ public class PlayerInteractionWithObjects : MonoBehaviour
             }
         }
 
-        else if (!_playerInput._playerPulse)
+        else if (!_pulse)
         {
             _currentInteractionCounter = 0;
             _canInteract = true;

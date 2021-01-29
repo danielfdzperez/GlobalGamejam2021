@@ -27,23 +27,35 @@ public class EarthquakeComponent : MonoBehaviour
     private Vector3 _startPos;                                  //Posición inicial
     private Vector3 _randomPos;                                 //Posición aleatoria que se le va dando al suelo
 
+    private PlayerInput _playerInput;
+
     //TODO: de qué camara se coge?
     private CameraShakeComponent _cameraShake;
+
+    //PUBLICO
+    public float _shakeDuration = 2f, _shakeForce = 0.10f;
+
+    public GameObject EarthquakeTarget = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        _startPos = transform.position;
+        if (!EarthquakeTarget)
+        {
+            Debug.LogError("No existe ningún objeto para hacer Earthquake");
+            return;
+        }
+        _startPos = EarthquakeTarget.transform.position;
         _cameraShake = Camera.main.GetComponent<CameraShakeComponent>();
+
+        _playerInput = FindObjectOfType<PlayerInput>();
     }
 
-    public void Update()
+    public void StartEarthquake()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(_cameraShake.Shake(2f, 0.10f));
-            BeginShake();
-        }
+        _playerInput._powerUpEnabled = false;
+        StartCoroutine(_cameraShake.Shake(_shakeDuration, _shakeForce));
+        BeginShake();
     }
 
     
@@ -78,7 +90,7 @@ public class EarthquakeComponent : MonoBehaviour
         {
             _timer += Time.deltaTime;
             _randomPos = _startPos + (Random.insideUnitSphere * shakeForce); //Coloco el objeto en una posición aleatoria de un área de tamaño "proporcional a la fuerza"
-            transform.position = _randomPos;
+            EarthquakeTarget.transform.position = _randomPos;
 
             if (delayBetweenShakes > 0f)
             {
@@ -91,7 +103,7 @@ public class EarthquakeComponent : MonoBehaviour
         }
 
         //Volvemos a poner el suelo donde estaba
-        transform.position = _startPos;
+        EarthquakeTarget.transform.position = _startPos;
     }
 
 }

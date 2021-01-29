@@ -15,7 +15,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""PlayerActions"",
+            ""name"": ""Player1Actions"",
             ""id"": ""a996ed18-03c2-4e71-a03b-fec79b906a39"",
             ""actions"": [
                 {
@@ -25,13 +25,21 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PowerUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f9e4b4f-43af-4a34-8782-81f44e0f7422"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""89bc0b2c-476b-4105-81fd-af156adf04a4"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -49,6 +57,96 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Pulse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c14b656-e0ed-4948-9708-20f6d8c9215d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e93df67-af71-44ba-aa10-481bf9b054da"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player2Actions"",
+            ""id"": ""52b64490-5294-4b67-baa7-dbaf458d1b7b"",
+            ""actions"": [
+                {
+                    ""name"": ""Pulse"",
+                    ""type"": ""Button"",
+                    ""id"": ""73ab53c9-8e73-4d28-ab35-5d4554dc4d11"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PowerUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""39d2095c-2c9f-4468-8fbd-09bdca1ab9a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""91804bfb-6287-4a28-93c6-37aa33ce8fdd"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pulse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""813959e6-f710-4f90-a86f-f69d285ac1db"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pulse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94b1ce85-1037-45b6-89c2-2e31eed57f0e"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e0c0d79-9c54-4214-927b-8d7ad0239499"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -57,9 +155,17 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
             ""id"": ""63971834-6b45-424b-a827-59b93cc05c2e"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""Player1Move"",
                     ""type"": ""Value"",
                     ""id"": ""89866045-f4a3-4b81-91a2-a469b86f1ccd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Player2Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""8a340070-6910-4bcf-b823-5ca343501625"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -73,7 +179,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Move"",
+                    ""action"": ""Player1Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -84,7 +190,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Player1Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -95,40 +201,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""6825562f-7631-4f53-a1b7-2a935dba43d6"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""0e853c77-ee46-4cf4-8020-c9346ccf56d0"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""4601d757-7051-4c91-ad31-56f4c58d1212"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Player1Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -139,18 +212,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""1b64fa34-f91c-48f4-8956-c5045c0d80af"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Player1Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -161,18 +223,95 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Player1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fe97d70-9a6a-4490-8c37-e9e6901fb51e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""e37c4ba5-e1dd-4fc9-a572-0e87d8f11776"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""14dfeaf7-493f-4316-943e-9d89c00bcccd"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""db858273-df0d-468a-b152-479d4d674d89"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player2Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""6cfd9fea-0246-4662-a13a-fb367358afbc"",
+                    ""id"": ""6d9ff697-766e-473c-974c-c2c4a152cd36"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""fc8c8c42-9221-4e99-8e39-6d68efbbbf6b"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a8d378c7-256a-42d2-abd5-2538652c2d84"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d02b7bc7-3f5e-4cc6-b9b8-dcb952711d81"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player2Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -181,12 +320,18 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // PlayerActions
-        m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
-        m_PlayerActions_Pulse = m_PlayerActions.FindAction("Pulse", throwIfNotFound: true);
+        // Player1Actions
+        m_Player1Actions = asset.FindActionMap("Player1Actions", throwIfNotFound: true);
+        m_Player1Actions_Pulse = m_Player1Actions.FindAction("Pulse", throwIfNotFound: true);
+        m_Player1Actions_PowerUp = m_Player1Actions.FindAction("PowerUp", throwIfNotFound: true);
+        // Player2Actions
+        m_Player2Actions = asset.FindActionMap("Player2Actions", throwIfNotFound: true);
+        m_Player2Actions_Pulse = m_Player2Actions.FindAction("Pulse", throwIfNotFound: true);
+        m_Player2Actions_PowerUp = m_Player2Actions.FindAction("PowerUp", throwIfNotFound: true);
         // PlayerMovement
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
-        m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMovement_Player1Move = m_PlayerMovement.FindAction("Player1Move", throwIfNotFound: true);
+        m_PlayerMovement_Player2Move = m_PlayerMovement.FindAction("Player2Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -233,48 +378,99 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // PlayerActions
-    private readonly InputActionMap m_PlayerActions;
-    private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
-    private readonly InputAction m_PlayerActions_Pulse;
-    public struct PlayerActionsActions
+    // Player1Actions
+    private readonly InputActionMap m_Player1Actions;
+    private IPlayer1ActionsActions m_Player1ActionsActionsCallbackInterface;
+    private readonly InputAction m_Player1Actions_Pulse;
+    private readonly InputAction m_Player1Actions_PowerUp;
+    public struct Player1ActionsActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Pulse => m_Wrapper.m_PlayerActions_Pulse;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
+        public Player1ActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pulse => m_Wrapper.m_Player1Actions_Pulse;
+        public InputAction @PowerUp => m_Wrapper.m_Player1Actions_PowerUp;
+        public InputActionMap Get() { return m_Wrapper.m_Player1Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActionsActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActionsActions instance)
+        public static implicit operator InputActionMap(Player1ActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer1ActionsActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsActionsCallbackInterface != null)
+            if (m_Wrapper.m_Player1ActionsActionsCallbackInterface != null)
             {
-                @Pulse.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPulse;
-                @Pulse.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPulse;
-                @Pulse.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPulse;
+                @Pulse.started -= m_Wrapper.m_Player1ActionsActionsCallbackInterface.OnPulse;
+                @Pulse.performed -= m_Wrapper.m_Player1ActionsActionsCallbackInterface.OnPulse;
+                @Pulse.canceled -= m_Wrapper.m_Player1ActionsActionsCallbackInterface.OnPulse;
+                @PowerUp.started -= m_Wrapper.m_Player1ActionsActionsCallbackInterface.OnPowerUp;
+                @PowerUp.performed -= m_Wrapper.m_Player1ActionsActionsCallbackInterface.OnPowerUp;
+                @PowerUp.canceled -= m_Wrapper.m_Player1ActionsActionsCallbackInterface.OnPowerUp;
             }
-            m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
+            m_Wrapper.m_Player1ActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Pulse.started += instance.OnPulse;
                 @Pulse.performed += instance.OnPulse;
                 @Pulse.canceled += instance.OnPulse;
+                @PowerUp.started += instance.OnPowerUp;
+                @PowerUp.performed += instance.OnPowerUp;
+                @PowerUp.canceled += instance.OnPowerUp;
             }
         }
     }
-    public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+    public Player1ActionsActions @Player1Actions => new Player1ActionsActions(this);
+
+    // Player2Actions
+    private readonly InputActionMap m_Player2Actions;
+    private IPlayer2ActionsActions m_Player2ActionsActionsCallbackInterface;
+    private readonly InputAction m_Player2Actions_Pulse;
+    private readonly InputAction m_Player2Actions_PowerUp;
+    public struct Player2ActionsActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public Player2ActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pulse => m_Wrapper.m_Player2Actions_Pulse;
+        public InputAction @PowerUp => m_Wrapper.m_Player2Actions_PowerUp;
+        public InputActionMap Get() { return m_Wrapper.m_Player2Actions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player2ActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer2ActionsActions instance)
+        {
+            if (m_Wrapper.m_Player2ActionsActionsCallbackInterface != null)
+            {
+                @Pulse.started -= m_Wrapper.m_Player2ActionsActionsCallbackInterface.OnPulse;
+                @Pulse.performed -= m_Wrapper.m_Player2ActionsActionsCallbackInterface.OnPulse;
+                @Pulse.canceled -= m_Wrapper.m_Player2ActionsActionsCallbackInterface.OnPulse;
+                @PowerUp.started -= m_Wrapper.m_Player2ActionsActionsCallbackInterface.OnPowerUp;
+                @PowerUp.performed -= m_Wrapper.m_Player2ActionsActionsCallbackInterface.OnPowerUp;
+                @PowerUp.canceled -= m_Wrapper.m_Player2ActionsActionsCallbackInterface.OnPowerUp;
+            }
+            m_Wrapper.m_Player2ActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pulse.started += instance.OnPulse;
+                @Pulse.performed += instance.OnPulse;
+                @Pulse.canceled += instance.OnPulse;
+                @PowerUp.started += instance.OnPowerUp;
+                @PowerUp.performed += instance.OnPowerUp;
+                @PowerUp.canceled += instance.OnPowerUp;
+            }
+        }
+    }
+    public Player2ActionsActions @Player2Actions => new Player2ActionsActions(this);
 
     // PlayerMovement
     private readonly InputActionMap m_PlayerMovement;
     private IPlayerMovementActions m_PlayerMovementActionsCallbackInterface;
-    private readonly InputAction m_PlayerMovement_Move;
+    private readonly InputAction m_PlayerMovement_Player1Move;
+    private readonly InputAction m_PlayerMovement_Player2Move;
     public struct PlayerMovementActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerMovementActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
+        public InputAction @Player1Move => m_Wrapper.m_PlayerMovement_Player1Move;
+        public InputAction @Player2Move => m_Wrapper.m_PlayerMovement_Player2Move;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,26 +480,39 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerMovementActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnMove;
+                @Player1Move.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPlayer1Move;
+                @Player1Move.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPlayer1Move;
+                @Player1Move.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPlayer1Move;
+                @Player2Move.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPlayer2Move;
+                @Player2Move.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPlayer2Move;
+                @Player2Move.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPlayer2Move;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
+                @Player1Move.started += instance.OnPlayer1Move;
+                @Player1Move.performed += instance.OnPlayer1Move;
+                @Player1Move.canceled += instance.OnPlayer1Move;
+                @Player2Move.started += instance.OnPlayer2Move;
+                @Player2Move.performed += instance.OnPlayer2Move;
+                @Player2Move.canceled += instance.OnPlayer2Move;
             }
         }
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
-    public interface IPlayerActionsActions
+    public interface IPlayer1ActionsActions
     {
         void OnPulse(InputAction.CallbackContext context);
+        void OnPowerUp(InputAction.CallbackContext context);
+    }
+    public interface IPlayer2ActionsActions
+    {
+        void OnPulse(InputAction.CallbackContext context);
+        void OnPowerUp(InputAction.CallbackContext context);
     }
     public interface IPlayerMovementActions
     {
-        void OnMove(InputAction.CallbackContext context);
+        void OnPlayer1Move(InputAction.CallbackContext context);
+        void OnPlayer2Move(InputAction.CallbackContext context);
     }
 }
