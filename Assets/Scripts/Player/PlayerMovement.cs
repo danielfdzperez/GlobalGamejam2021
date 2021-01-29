@@ -5,23 +5,20 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class PlayerMovement : MonoBehaviour
 {
     private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
-    private Transform m_Cam;                  // A reference to the main camera in the scenes transform
+    public Transform m_Cam;                  // A reference to the main camera in the scenes transform
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
-    private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
     private PlayerInput _playerInput;
 
     private PlayerInformation _playerInformation;
 
+    private float h = 0, v = 0;
+
     private void Start()
     {
         // get the transform of the main camera
-        if (Camera.main != null)
-        {
-            m_Cam = Camera.main.transform;
-        }
-        else
+        if (Camera.main == null)
         {
             Debug.LogWarning(
                 "Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.", gameObject);
@@ -40,8 +37,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        float h = 0;
-        float v = 0;
+        h = 0;
+        v = 0;
 
         // read inputs
         if (_playerInformation._myPlayerNumber == myPlayerNumber.Player1)
@@ -70,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // pass all parameters to the character control script
-        m_Character.Move(m_Move, false, m_Jump);
-        m_Jump = false;
+        m_Character.Move(m_Move, false, false);
+
     }
 }
 

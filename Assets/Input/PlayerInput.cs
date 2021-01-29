@@ -36,12 +36,14 @@ public class PlayerInput : MonoBehaviour
     {
         _playerInputActions.Enable();
 
-        if (Gamepad.all[0] != null)
-            P1 = Gamepad.all[0].deviceId;
+        if (Gamepad.all.Count > 0)
+        {
+            if (Gamepad.all[0] != null)
+                P1 = Gamepad.all[0].deviceId;
 
-        if (Gamepad.all[1] != null)
-            P2 = Gamepad.all[1].deviceId;
-
+            if (Gamepad.all.Count > 1 && Gamepad.all[1] != null)
+                P2 = Gamepad.all[1].deviceId;
+        }
         _playerInputActions.Player1Actions.Pulse.performed += EnablePulse1;
         _playerInputActions.Player1Actions.Pulse.canceled += DisablePulse1;
 
@@ -77,37 +79,49 @@ public class PlayerInput : MonoBehaviour
 
     private void EnablePulse1(InputAction.CallbackContext context)
     {
-        if (context.control.device.deviceId == P1)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P1 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _player1Pulse = true;
     }
 
     private void DisablePulse1(InputAction.CallbackContext context)
     {
-        if (context.control.device.deviceId == P1)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P1 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _player1Pulse = false;
     }
 
     private void EnablePulse2(InputAction.CallbackContext context)
     {
-        if (context.control.device.deviceId == P2)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P2 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _player2Pulse = true;
     }
 
     private void DisablePulse2(InputAction.CallbackContext context)
     {
-        if (context.control.device.deviceId == P2)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P2 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _player2Pulse = false;
     }
 
     private void Player1_Move_Performed(InputAction.CallbackContext context)
     {
-        if(context.control.device.deviceId == P1)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P1 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _movementInputP1 = context.ReadValue<Vector2>();
     }
 
     private void Player1_Move_Canceled(InputAction.CallbackContext context)
     {
-        if (context.control.device.deviceId == P1)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P1 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _movementInputP1 = Vector2.zero;
     }
 
@@ -119,13 +133,17 @@ public class PlayerInput : MonoBehaviour
 
     private void Player2_Move_Performed(InputAction.CallbackContext context)
     {
-        if(context.control.device.deviceId == P2)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P2 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _movementInputP2 = context.ReadValue<Vector2>();
     }
 
     private void Player2_Move_Canceled(InputAction.CallbackContext context)
     {
-        if (context.control.device.deviceId == P2)
+        System.Type t = context.control.device.GetType();
+
+        if (context.control.device.deviceId == P2 || t.FullName == "UnityEngine.InputSystem.Keyboard")
             _movementInputP2 = Vector2.zero;
     }
 }

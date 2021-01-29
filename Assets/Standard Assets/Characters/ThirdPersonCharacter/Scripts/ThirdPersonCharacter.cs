@@ -29,6 +29,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 
+		public float _inputTolerance = 0.2f;
 
 		void Start()
 		{
@@ -49,6 +50,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
+			if (move.magnitude <= _inputTolerance) move = Vector3.zero;
 			if (move.magnitude > 1f) move.Normalize();
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();

@@ -165,7 +165,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Player2Move"",
                     ""type"": ""Value"",
-                    ""id"": ""99ec920f-4d3b-473d-a95c-06da5aeddd6d"",
+                    ""id"": ""b77b70b3-3267-43ad-8641-0a68db50b930"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -185,62 +185,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""WASD"",
-                    ""id"": ""8a621b74-9b7c-447f-a5b9-446103fbc895"",
-                    ""path"": ""Dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Player1Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""72b3430a-7f8d-4269-a144-437a09afac51"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Player1Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""06ae0f1c-3011-4798-a82a-039c457945f3"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Player1Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c0705c6a-f6a2-4bb6-86d5-a911b7860d1f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Player1Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""431df157-4025-44d6-beef-35bef21198c8"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Player2Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""25ff2185-b920-4ed4-aec5-017c3cce38ab"",
+                    ""id"": ""99c99537-0b3f-42d8-a23e-15dc1c103f8b"",
                     ""path"": ""Dpad"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -251,7 +196,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""a4b8278c-10f2-404b-9de9-5393536c612d"",
+                    ""id"": ""4da4b699-b1e3-4bf5-8760-bae25de0e7f0"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -262,7 +207,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""da1c13de-b0c6-4a99-8e1e-b3a3d9e59e19"",
+                    ""id"": ""316e51c6-947c-41db-9ecf-948c8147634a"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -273,7 +218,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""febd5eec-1110-43c9-9a61-2f2a2b84e449"",
+                    ""id"": ""b10a6ac8-c6fd-4fab-8d78-79e068c8afeb"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -281,6 +226,61 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Player2Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""5b1edec3-3373-4cdc-a042-fe6c39f861c4"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Player1Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f527702b-d3d4-4dbc-b01f-abdd01a24971"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f39be474-2038-42be-8491-59c6acdf2d4e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""30059cc6-5236-4baa-8cdb-75763b107a4b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Player1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90834521-1722-4f4f-84cb-8339856251e9"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Player2Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
