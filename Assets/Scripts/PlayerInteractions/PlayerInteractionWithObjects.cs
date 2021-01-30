@@ -61,11 +61,26 @@ public class PlayerInteractionWithObjects : MonoBehaviour
     //Interactúa directamente con los objetos que tiene dentro del radio de acción
     public void Interact()
     {
-        foreach(Rigidbody rb in _interacionSphere.GetInteractuableObjects())
+        List<Rigidbody> auxList = new List<Rigidbody>();
+
+        foreach (Rigidbody rb in _interacionSphere.GetInteractuableObjects())
         {
-            //Darle la vuelta al rb y transform para que los atraiga en lugar de repelerlos
-            rb.AddForce((rb.transform.position - transform.position).normalized  * _interactionForce);
+
+            if (rb)
+            {
+                //Darle la vuelta al rb y transform para que los atraiga en lugar de repelerlos
+                rb.AddForce((rb.transform.position - transform.position).normalized * _interactionForce);
+            }
+
+            else
+            {
+                auxList.Add(rb);
+            }
         }
+
+        foreach(Rigidbody rb in auxList)
+            _interacionSphere.RemoveItem(rb);
+
     }
 
 

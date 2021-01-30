@@ -62,7 +62,8 @@ public class GameManager : MonoBehaviour
                 _currentTimer -= Time.deltaTime;
                 int minutes = (int)_currentTimer / 60;              //Get total minutes
                 int seconds = (int)_currentTimer - (minutes * 60);  //Get seconds for display alongside minutes
-                timerText.text = "TIEMPO: " + minutes.ToString("D2") + ":" + seconds.ToString("D2");      
+                if(timerText)
+                    timerText.text = "TIEMPO: " + minutes.ToString("D2") + ":" + seconds.ToString("D2");      
             }
             else
             {
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
     public void AddNewObjectiveProp(ObjectiveProp prop)
     {
         _objectiveProps.Add(prop);
-        Debug.Log("added a prop: " + prop.name + "\ncount: " + _objectiveProps.Count);
+        //Debug.Log("added a prop: " + prop.name + "\ncount: " + _objectiveProps.Count);
     }
 
     public void SetNewObjective()
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour
                 _currentObjective = _objectiveProps[_objectiveIndex];
             }
             _currentObjective.SetAsCurrentObjective();
-            Debug.LogWarning("CURRENT OBJECTIVE: " + _currentObjective);
+            //Debug.LogWarning("CURRENT OBJECTIVE: " + _currentObjective);
         }
     }
 

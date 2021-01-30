@@ -31,6 +31,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		public float _inputTolerance = 0.2f;
 
+		public Animator _characterAnimator;
+
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
@@ -72,6 +74,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
+
+
+			if (_characterAnimator)
+			{
+				if (move == Vector3.zero)
+					_characterAnimator.SetBool("Walking", false);
+				else
+					_characterAnimator.SetBool("Walking", true);
+			}
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);

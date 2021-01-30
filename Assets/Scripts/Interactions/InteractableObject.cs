@@ -8,11 +8,16 @@ public class InteractableObject : MonoBehaviour
     private float _objectWeight = 1;
 
     public GameObject _interactuableObjectHUD = null;
+    private GameObject _myInteractuableObjectHUD = null;
 
     private void Start()
     {
         if (!GetComponent<Rigidbody>())
             this.gameObject.AddComponent<Rigidbody>();
+
+        _myInteractuableObjectHUD = Instantiate(_interactuableObjectHUD, transform.position, Quaternion.identity);
+        _myInteractuableObjectHUD.transform.parent = transform;
+        _myInteractuableObjectHUD.SetActive(false);
 
         _interactuableObjectHUD.SetActive(false);
         gameObject.GetComponent<Rigidbody>().mass = _objectWeight;
@@ -22,7 +27,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (_interactuableObjectHUD)
         {
-            _interactuableObjectHUD.SetActive(true);
+            _myInteractuableObjectHUD.SetActive(true);
         }
     }
 
@@ -30,7 +35,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (_interactuableObjectHUD)
         {
-            _interactuableObjectHUD.SetActive(false);
+            _myInteractuableObjectHUD.SetActive(false);
         }
     }
 }

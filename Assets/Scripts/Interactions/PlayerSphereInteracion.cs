@@ -34,4 +34,10 @@ public class PlayerSphereInteracion : MonoBehaviour
         return _interactuableRB;
     }
 
+    public void RemoveItem(Rigidbody rb)
+    {
+        if(_interactuableRB.Contains(rb))
+            _interactuableRB.Remove(rb);
+    }
+
 }
